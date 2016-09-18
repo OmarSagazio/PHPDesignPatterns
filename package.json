@@ -1,0 +1,25 @@
+{
+  "name": "php-design-patterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OmarSagazio/PHPDesignPatterns.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OmarSagazio/PHPDesignPatterns/issues"
+  },
+  "homepage": "https://github.com/OmarSagazio/PHPDesignPatterns#readme",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "vinyl-ftp": "^0.5.0"
+  }
+}
