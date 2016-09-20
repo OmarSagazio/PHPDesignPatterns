@@ -1,14 +1,17 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     ftp = require('vinyl-ftp'),
-    del = require('del');
+    del = require('del'),
+    fs = require('fs');
+
 
 gulp.task('deploy', function () {
+    var config = JSON.parse(fs.readFileSync('./config/properties.json'));
 
     var conn = ftp.create({
-        host: 'ftp.ukwebdev.altervista.org',
-        user: 'ukwebdev',
-        password: 'curgevirvo12',
+        host: config.host,
+        user: config.user,
+        password: config.password,
         parallel: 4,
         log: gutil.log
     });
