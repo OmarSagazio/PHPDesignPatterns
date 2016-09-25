@@ -23,9 +23,9 @@ gulp.task('deploy', function () {
     // using base = '.' will transfer everything to /public_html correctly
     // turn off buffering in gulp.src for best performance
 
-    return gulp.src(globs, {base: './dist/php-design-patterns/', buffer: false})
-        .pipe(conn.newer('php-design-patterns/'))   // only upload newer files
-        .pipe(conn.dest('/php-design-patterns/'));
+    return gulp.src(globs, {base: './dist/', buffer: false})
+        .pipe(conn.newer('./'))   // only upload newer files
+        .pipe(conn.dest('/'));
 
 });
 
@@ -34,6 +34,12 @@ gulp.task('clean', function () {
 });
 
 gulp.task('copy', function () {
-    gulp.src('./src/php-design-patterns/**', {base: './src/'})
+    gulp.src('./src/**', {base: './src/'})
+        .pipe(gulp.dest('./dist'));
+});
+
+
+gulp.task('cc', ['clean'], function () {
+    gulp.src('./src/**', {base: './src/'})
         .pipe(gulp.dest('./dist'));
 });
